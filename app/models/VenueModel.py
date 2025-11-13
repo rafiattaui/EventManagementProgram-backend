@@ -2,6 +2,7 @@ from .BaseModel import Base
 from sqlalchemy.orm import mapped_column
 from sqlalchemy import String, Integer, Text
 
+
 class Venue(Base):
     __tablename__ = "venue"
 

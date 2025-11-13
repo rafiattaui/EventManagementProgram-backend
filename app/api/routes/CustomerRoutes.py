@@ -5,6 +5,7 @@ from ...core.database import get_conn
 
 router = APIRouter(prefix="/customer")
 
+
 @router.get("/")
 async def hello_users(session: AsyncSession = Depends(get_conn)):
     result = await session.execute(text("SELECT * FROM CUSTOMER"))

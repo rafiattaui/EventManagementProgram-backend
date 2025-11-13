@@ -2,6 +2,7 @@ from sqlalchemy.orm import mapped_column
 from sqlalchemy import Integer, String
 from .BaseModel import Base
 
+
 class Customer(Base):
     __tablename__ = "customer"
 

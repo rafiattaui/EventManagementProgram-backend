@@ -2,6 +2,7 @@ from .BaseModel import Base
 from sqlalchemy.orm import mapped_column
 from sqlalchemy import Integer, Date, Time
 
+
 class EventDateTime(Base):
     __tablename__ = "eventdatetime"
 

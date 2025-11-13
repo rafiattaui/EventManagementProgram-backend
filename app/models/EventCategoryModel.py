@@ -2,6 +2,7 @@ from .BaseModel import Base
 from sqlalchemy.orm import mapped_column
 from sqlalchemy import Integer, String
 
+
 class EventCategory(Base):
     __tablename__ = "eventcategory"
 
