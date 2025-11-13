@@ -1,7 +1,6 @@
-from BaseModel import Base
+from .BaseModel import Base
 from sqlalchemy.orm import mapped_column
 from sqlalchemy import Integer, String
-
 
 class Organizer(Base):
     __tablename__ = "organizer"
