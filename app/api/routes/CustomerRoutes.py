@@ -3,9 +3,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
 from ...core.database import get_conn
 
-router = APIRouter(prefix="/user")
+router = APIRouter(prefix="/customer")
 
 @router.get("/")
 async def hello_users(session: AsyncSession = Depends(get_conn)):
-    result = await session.execute(text("SELECT * FROM USER"))
+    result = await session.execute(text("SELECT * FROM CUSTOMER"))
     return result.fetchall()

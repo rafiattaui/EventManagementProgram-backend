@@ -9,8 +9,6 @@ from functools import partial
 settings = Settings()
 engine, sessionLocal = init_db(settings)
 
-get_db = partial(get_conn, sessionLocal)
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     async with engine.begin() as conn:
@@ -19,7 +17,7 @@ async def lifespan(app: FastAPI):
     await engine.dispose()
 
 app = FastAPI(lifespan=lifespan)
-app.dependency_overrides[get_conn] = get_db
+app.state.SESSION_LOCAL = sessionLocal
 
 for r in routers:
     app.include_router(r)
